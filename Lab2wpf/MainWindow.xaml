@@ -1,0 +1,32 @@
+﻿<Window x:Class="Lab2wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab2wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="DataBase">
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="588,81,0,0" VerticalAlignment="Top" Width="123" Height="61" Click="Button_Click"/>
+        <DataGrid x:Name="ListMeance" HorizontalAlignment="Left" Height="351" VerticalAlignment="Top" Width="573" Margin="10,10,0,0" AutoGenerateColumns="False" MouseUp="grid_MouseUp" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Имя угрозы" Binding="{Binding Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Краткая информация" HorizontalAlignment="Left" Margin="588,175,0,0" VerticalAlignment="Top" Width="123" Height="62" Click="Button_Click_1"/>
+        <ComboBox x:Name="NumberOfRecords" HorizontalAlignment="Left" Margin="63,366,0,0" VerticalAlignment="Top" Width="79" SelectionChanged="ComboBox_SelectionChanged">
+        </ComboBox>
+        <Button x:Name="Button1" Content="Назад" HorizontalAlignment="Left" Margin="160,366,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button x:Name="Button2" Content="Вперёд" HorizontalAlignment="Left" Margin="257,366,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <DataGrid x:Name="ListUpdate" HorizontalAlignment="Left" Height="227" Margin="10,10,0,0" VerticalAlignment="Top" Width="573" AutoGenerateColumns="False" SelectionChanged="ListUpdate_SelectionChanged" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Поле" Binding="{Binding Pole}"/>
+                <DataGridTextColumn Header="Было" Binding="{Binding Was}"/>
+                <DataGridTextColumn Header="Стало" Binding="{Binding Bycame}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
